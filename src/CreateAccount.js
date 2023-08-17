@@ -65,22 +65,22 @@ export default function CreateAccount() {
     event.preventDefault();
     let data = {
       'email': state.email,
-      'mobile_num': state.mobilenumber,
-      'adhar_id': state.aadhaarnumber,
+      'mobile_num': state.mobile_num,
+      'adhar_id': state.adhar_id,
       'title': state.title,
-      'first_name': state.firstname,
-      'middle_name': state.middlename,
-      'last_name': state.lastname,
-      'father_name': state.fathersname,
-      'dob': state.dateofbirth,
+      'first_name': state.first_name,
+      'middle_name': state.middle_name,
+      'last_name': state.last_name,
+      'father_name': state.father_name,
+      'dob': state.dob,
       'age': state.age,
       'gender': state.gender,
-      'perm_add_id': state.permanentaddress,
-      'temp_add_id': state.temporaryaddress,
-      'is_admin': state.admin,
-      'occupation_type': state.occupationtype,
-      'income_source': state.sourceofincome,
-      'annual_income': state.annualincome
+      'perm_add_id': state.perm_add_id,
+      'temp_add_id': state.temp_add_id,
+      'is_admin': state.is_admin,
+      'occupation_type': state.occupation_type,
+      'income_source': state.income_source,
+      'annual_income': state.annual_income
     }
     console.log(data)
     axios({
@@ -88,22 +88,22 @@ export default function CreateAccount() {
       url: 'http://127.0.0.1:8082/user',
       data: {
         'email': state.email,
-        'mobile_num': state.mobilenumber,
-        'adhar_id': state.aadhaarnumber,
+        'mobile_num': state.mobile_num,
+        'adhar_id': state.adhar_id,
         'title': state.title,
-        'first_name': state.firstname,
-        'middle_name': state.middlename,
-        'last_name': state.lastname,
-        'father_name': state.fathersname,
-        'dob': state.dateofbirth,
+        'first_name': state.first_name,
+        'middle_name': state.middle_name,
+        'last_name': state.last_name,
+        'father_name': state.father_name,
+        'dob': state.dob,
         'age': state.age,
         'gender': state.gender,
-        'perm_add_id': state.permanentaddress,
-        'temp_add_id': state.temporaryaddress,
-        'is_admin': state.admin,
-        'occupation_type': state.occupationtype,
-        'income_source': state.sourceofincome,
-        'annual_income': state.annualincome
+        'perm_add_id': state.perm_add_id,
+        'temp_add_id': state.temp_add_id,
+        'is_admin': state.is_admin,
+        'occupation_type': state.occupation_type,
+        'income_source': state.income_source,
+        'annual_income': state.annual_income
       }
 
     });
@@ -143,7 +143,7 @@ export default function CreateAccount() {
               <input
                 type="int"
                 name="mobile_num"
-                value={state.mobilenumber}
+                value={state.mobile_num}
                 onChange={handleInputChange}
               />
             </div>
@@ -152,7 +152,7 @@ export default function CreateAccount() {
               <input
                 type="int"
                 name="adhar_id"
-                value={state.aadhaarnumber}
+                value={state.adhar_id}
                 onChange={handleInputChange}
               />
             </div>
@@ -170,7 +170,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="first_name"
-                value={state.firstname}
+                value={state.first_name}
                 onChange={handleInputChange}
               />
             </div>
@@ -179,7 +179,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="middle_name"
-                value={state.middlename}
+                value={state.middle_name}
                 onChange={handleInputChange}
               />
             </div>
@@ -188,7 +188,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="last_name"
-                value={state.lastname}
+                value={state.last_name}
                 onChange={handleInputChange}
               />
             </div>
@@ -197,7 +197,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="father_name"
-                value={state.fathersname}
+                value={state.father_name}
                 onChange={handleInputChange}
               />
             </div>
@@ -206,7 +206,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="dob"
-                value={state.dateofbirth}
+                value={state.dob}
                 onChange={handleInputChange}
               />
             </div>
@@ -233,7 +233,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="perm_add_id"
-                value={state.permanentaddress}
+                value={state.perm_add_id}
                 onChange={handleInputChange}
               />
             </div>
@@ -242,7 +242,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="temp_add_id"
-                value={state.temporaryaddress}
+                value={state.temp_add_id}
                 onChange={handleInputChange}
               />
             </div>
@@ -251,7 +251,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="is_admin"
-                value={state.admin}
+                value={state.is_admin}
                 onChange={handleInputChange}
               />
             </div>
@@ -260,7 +260,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="occupation_type"
-                value={state.occupationtype}
+                value={state.occupation_type}
                 onChange={handleInputChange}
               />
             </div>
@@ -269,7 +269,7 @@ export default function CreateAccount() {
               <input
                 type="text"
                 name="income_source"
-                value={state.sourceofincome}
+                value={state.income_source}
                 onChange={handleInputChange}
               />
             </div>
@@ -278,7 +278,7 @@ export default function CreateAccount() {
               <input
                 type="int"
                 name="income_source"
-                value={state.annualincome}
+                value={state.annual_income}
                 onChange={handleInputChange}
               />
             </div>
