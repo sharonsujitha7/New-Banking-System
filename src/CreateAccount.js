@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react";
+import axios, {isCancel, AxiosError} from 'axios';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -33,7 +34,7 @@ const defaultTheme = createTheme();
 export default function CreateAccount() {
   const [state, setState] = useState({
   'email': "",
-  'Mobile Number': ""
+  'mobilenumber': ""
 });
 
 const handleInputChange = (event) => {
@@ -46,6 +47,29 @@ const handleInputChange = (event) => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
+  axios({
+    method: 'post',
+    url: '/user',
+    data: {
+      'email':state.email,
+      'Mobile Number':state.mobilenumber,
+      'Aadhaar Number': state.aadhaarnumber,
+      'Title': state.title,
+      'First Name': state.firstname,
+      'Middle Name': state.middlename,
+      'Last Name': state.lastname,
+      'Fathers Name': state.fathersname,
+      'Date of Birth': state.dateofbirth,
+      'Age': state.age,
+      'Gender': state.gender,
+      'Permanent Address': state.permanentaddress,
+      'Temporary Address': state.temporaryaddress,
+      'Admin': state.admin,
+      'Occupation Type': state.occupationtype,
+      'Source of Income': state.sourceofincome,
+      'Annual Income': state.annualincome
+    }
+  });
   console.log(state);
 };
 
@@ -67,9 +91,7 @@ const handleSubmit = (event) => {
           <Typography component="h1" variant="h5">
             Login
           </Typography>
-          
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <div className='full-form'>
           <div className="form-control">
           <label>Email</label>
           <input
@@ -83,8 +105,8 @@ const handleSubmit = (event) => {
           <label>Mobile Number</label>
           <input
             type="int"
-            name="Mobile Number"
-            value={state.password}
+            name="mobilenumber"
+            value={state.mobilenumber}
             onChange={handleInputChange}
           />
           </div>
@@ -247,9 +269,7 @@ const handleSubmit = (event) => {
                 </Link>
               </Grid>
             </Grid>
-            </div>
           </Box>
-          
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
