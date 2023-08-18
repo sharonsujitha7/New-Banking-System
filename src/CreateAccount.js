@@ -49,6 +49,12 @@ export default function CreateAccount() {
     "occupation_type": "",
     "perm_add_id": "",
     "temp_add_id": "",
+    "perm_add_line_1":"",
+    "perm_add_line_2": "",
+    "perm_add_line_3": "",
+    "temp_add_line_1": "",
+    "temp_add_line_2": "",
+    "temp_add_line_3": "",
     "title": "",
     "account": ""
   });
@@ -75,8 +81,8 @@ export default function CreateAccount() {
       'dob': state.dob,
       'age': state.age,
       'gender': state.gender,
-      'perm_add_id': state.perm_add_id,
-      'temp_add_id': state.temp_add_id,
+      'perm_add_id': state.perm_add_line_1 + state.perm_add_line_2 + state.perm_add_line_3,
+      'temp_add_id': state.temp_add_line_1 + state.temp_add_line_2 + state.temp_add_line_3,
       'is_admin': state.is_admin,
       'occupation_type': state.occupation_type,
       'income_source': state.income_source,
@@ -86,26 +92,7 @@ export default function CreateAccount() {
     axios({
       method: 'post',
       url: 'http://127.0.0.1:8082/user',
-      data: {
-        'email': state.email,
-        'mobile_num': state.mobile_num,
-        'adhar_id': state.adhar_id,
-        'title': state.title,
-        'first_name': state.first_name,
-        'middle_name': state.middle_name,
-        'last_name': state.last_name,
-        'father_name': state.father_name,
-        'dob': state.dob,
-        'age': state.age,
-        'gender': state.gender,
-        'perm_add_id': state.perm_add_id,
-        'temp_add_id': state.temp_add_id,
-        'is_admin': state.is_admin,
-        'occupation_type': state.occupation_type,
-        'income_source': state.income_source,
-        'annual_income': state.annual_income
-      }
-
+      data: data
     });
     console.log(state);
   };
@@ -228,21 +215,62 @@ export default function CreateAccount() {
                 onChange={handleInputChange}
               />
             </div>
+            <div>Permanent Address</div>
             <div className="form-control">
-              <label>Permanent Address</label>
+              <label>Permanent Address Line 1:</label>
               <input
                 type="text"
-                name="perm_add_id"
-                value={state.perm_add_id}
+                name="perm_add_line_1"
+                value={state.perm_add_line_1}
                 onChange={handleInputChange}
               />
             </div>
             <div className="form-control">
+              <label>Permanent Address Line 2:</label>
+              <input
+                type="text"
+                name="perm_add_line_2"
+                value={state.perm_add_line_2}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="form-control">
+              <label>Permanent Address</label>
+              <input
+                type="text"
+                name="perm_add_line_3"
+                value={state.perm_add_line_3}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>Temporary Address</div>
+            <div> Temporary Address Line 1: </div>
+            <div className="form-control">
               <label>Temporary Address</label>
               <input
                 type="text"
-                name="temp_add_id"
-                value={state.temp_add_id}
+                name="temp_add_line_1"
+                value={state.temp_add_line_1}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div> Temporary Address Line 2: </div>
+            <div className="form-control">
+              <label>Temporary Address</label>
+              <input
+                type="text"
+                name="temp_add_line_2"
+                value={state.temp_add_line_2}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div> Temporary Address Line 3: </div>
+            <div className="form-control">
+              <label>Temporary Address</label>
+              <input
+                type="text"
+                name="temp_add_line_3"
+                value={state.temp_add_line_3}
                 onChange={handleInputChange}
               />
             </div>
@@ -277,7 +305,7 @@ export default function CreateAccount() {
               <label>Annual Income</label>
               <input
                 type="int"
-                name="income_source"
+                name="annual_income"
                 value={state.annual_income}
                 onChange={handleInputChange}
               />
