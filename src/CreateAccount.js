@@ -81,8 +81,8 @@ export default function CreateAccount() {
       'dob': state.dob,
       'age': state.age,
       'gender': state.gender,
-      'perm_add_id': state.perm_add_line_1 + state.perm_add_line_2 + state.perm_add_line_3,
-      'temp_add_id': state.temp_add_line_1 + state.temp_add_line_2 + state.temp_add_line_3,
+      'perm_add_id': state.perm_add_line_1 + ' ' + state.perm_add_line_2 + ' ' + state.perm_add_line_3,
+      'temp_add_id': state.temp_add_line_1 + ' ' + state.temp_add_line_2 + ' ' + state.temp_add_line_3,
       'is_admin': state.is_admin,
       'occupation_type': state.occupation_type,
       'income_source': state.income_source,
@@ -215,7 +215,7 @@ export default function CreateAccount() {
                 onChange={handleInputChange}
               />
             </div>
-            <div>Permanent Address</div>
+            <h2>Permanent Address</h2>
             <div className="form-control">
               <label>Permanent Address Line 1:</label>
               <input
@@ -235,7 +235,7 @@ export default function CreateAccount() {
               />
             </div>
             <div className="form-control">
-              <label>Permanent Address</label>
+              <label>Permanent Address Line 3:</label>
               <input
                 type="text"
                 name="perm_add_line_3"
@@ -243,10 +243,9 @@ export default function CreateAccount() {
                 onChange={handleInputChange}
               />
             </div>
-            <div>Temporary Address</div>
-            <div> Temporary Address Line 1: </div>
+            <h2>Temporary Address</h2>
             <div className="form-control">
-              <label>Temporary Address</label>
+              <label>Temporary Address Line 1:</label>
               <input
                 type="text"
                 name="temp_add_line_1"
@@ -254,9 +253,8 @@ export default function CreateAccount() {
                 onChange={handleInputChange}
               />
             </div>
-            <div> Temporary Address Line 2: </div>
             <div className="form-control">
-              <label>Temporary Address</label>
+              <label>Temporary Address Line 2:</label>
               <input
                 type="text"
                 name="temp_add_line_2"
@@ -264,9 +262,8 @@ export default function CreateAccount() {
                 onChange={handleInputChange}
               />
             </div>
-            <div> Temporary Address Line 3: </div>
             <div className="form-control">
-              <label>Temporary Address</label>
+              <label>Temporary Address Line 3:</label>
               <input
                 type="text"
                 name="temp_add_line_3"
