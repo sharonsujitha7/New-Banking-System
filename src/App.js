@@ -1,12 +1,36 @@
-import logo from './logo.svg';
-import './CreateAccount.css';
+//import logo from './logo.svg';
 import SignIn from './Login';
-import CreateAccount from './CreateAccount';
+import React from 'react';
+import Register from './Register';
+//import Home from './Home';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import DisplaySuccess from './TransferSuccesful';
+import Transaction from './Transaction';
+
 function App() {
   return (
-    <div className="App">
-      <CreateAccount></CreateAccount>
-    </div>
+    <Router>
+
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route
+          path="/login"
+          element={<SignIn />}
+        />
+        <Route
+          path="/Register"
+          element={<Register />}
+        />
+        <Route
+          path="/Success"
+          element={<DisplaySuccess />}
+        />
+        <Route
+          path="/Transaction"
+          element={<Transaction />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
